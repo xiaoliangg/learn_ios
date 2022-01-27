@@ -7,39 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79B4523F27A1943700561EAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B4523E27A1943700561EAC /* AppDelegate.m */; };
-		79B4524227A1943700561EAC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B4524127A1943700561EAC /* SceneDelegate.m */; };
-		79B4524527A1943700561EAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B4524427A1943700561EAC /* ViewController.m */; };
-		79B4524827A1943700561EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B4524627A1943700561EAC /* Main.storyboard */; };
-		79B4524A27A1943800561EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B4524927A1943800561EAC /* Assets.xcassets */; };
-		79B4524D27A1943800561EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B4524B27A1943800561EAC /* LaunchScreen.storyboard */; };
-		79B4525027A1943800561EAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B4524F27A1943800561EAC /* main.m */; };
-		79B4525927A1957C00561EAC /* BNRQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B4525727A1957C00561EAC /* BNRQuizViewController.m */; };
-		79B4525A27A1957C00561EAC /* BNRQuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B4525827A1957C00561EAC /* BNRQuizViewController.xib */; };
-		79B4528127A2DC3800561EAC /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 79B4528027A2DC3800561EAC /* test.txt */; };
+		79B4526927A2D79700561EAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B4526827A2D79700561EAC /* AppDelegate.m */; };
+		79B4526C27A2D79700561EAC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B4526B27A2D79700561EAC /* SceneDelegate.m */; };
+		79B4526F27A2D79700561EAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B4526E27A2D79700561EAC /* ViewController.m */; };
+		79B4527227A2D79700561EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B4527027A2D79700561EAC /* Main.storyboard */; };
+		79B4527427A2D79800561EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B4527327A2D79800561EAC /* Assets.xcassets */; };
+		79B4527727A2D79800561EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B4527527A2D79800561EAC /* LaunchScreen.storyboard */; };
+		79B4527A27A2D79800561EAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B4527927A2D79800561EAC /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		79B4523A27A1943700561EAC /* a_Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = a_Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		79B4523D27A1943700561EAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		79B4523E27A1943700561EAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		79B4524027A1943700561EAC /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		79B4524127A1943700561EAC /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		79B4524327A1943700561EAC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		79B4524427A1943700561EAC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		79B4524727A1943700561EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		79B4524927A1943800561EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		79B4524C27A1943800561EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		79B4524E27A1943800561EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79B4524F27A1943800561EAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		79B4525627A1957C00561EAC /* BNRQuizViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRQuizViewController.h; sourceTree = "<group>"; };
-		79B4525727A1957C00561EAC /* BNRQuizViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRQuizViewController.m; sourceTree = "<group>"; };
-		79B4525827A1957C00561EAC /* BNRQuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BNRQuizViewController.xib; sourceTree = "<group>"; };
-		79B4528027A2DC3800561EAC /* test.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
+		79B4526427A2D79700561EAC /* First_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = First_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79B4526727A2D79700561EAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		79B4526827A2D79700561EAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		79B4526A27A2D79700561EAC /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		79B4526B27A2D79700561EAC /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		79B4526D27A2D79700561EAC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		79B4526E27A2D79700561EAC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		79B4527127A2D79700561EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		79B4527327A2D79800561EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79B4527627A2D79800561EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		79B4527827A2D79800561EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79B4527927A2D79800561EAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		79B4523727A1943700561EAC /* Frameworks */ = {
+		79B4526127A2D79700561EAC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,79 +42,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		79B4523127A1943700561EAC = {
+		79B4525B27A2D79700561EAC = {
 			isa = PBXGroup;
 			children = (
-				79B4523C27A1943700561EAC /* a_Quiz */,
-				79B4523B27A1943700561EAC /* Products */,
+				79B4526627A2D79700561EAC /* First_ios */,
+				79B4526527A2D79700561EAC /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		79B4523B27A1943700561EAC /* Products */ = {
+		79B4526527A2D79700561EAC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				79B4523A27A1943700561EAC /* a_Quiz.app */,
+				79B4526427A2D79700561EAC /* First_ios.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		79B4523C27A1943700561EAC /* a_Quiz */ = {
+		79B4526627A2D79700561EAC /* First_ios */ = {
 			isa = PBXGroup;
 			children = (
-				79B4523D27A1943700561EAC /* AppDelegate.h */,
-				79B4525627A1957C00561EAC /* BNRQuizViewController.h */,
-				79B4525727A1957C00561EAC /* BNRQuizViewController.m */,
-				79B4525827A1957C00561EAC /* BNRQuizViewController.xib */,
-				79B4523E27A1943700561EAC /* AppDelegate.m */,
-				79B4524027A1943700561EAC /* SceneDelegate.h */,
-				79B4524127A1943700561EAC /* SceneDelegate.m */,
-				79B4524327A1943700561EAC /* ViewController.h */,
-				79B4524427A1943700561EAC /* ViewController.m */,
-				79B4524627A1943700561EAC /* Main.storyboard */,
-				79B4524927A1943800561EAC /* Assets.xcassets */,
-				79B4524B27A1943800561EAC /* LaunchScreen.storyboard */,
-				79B4524E27A1943800561EAC /* Info.plist */,
-				79B4524F27A1943800561EAC /* main.m */,
-				79B4528027A2DC3800561EAC /* test.txt */,
+				79B4526727A2D79700561EAC /* AppDelegate.h */,
+				79B4526827A2D79700561EAC /* AppDelegate.m */,
+				79B4526A27A2D79700561EAC /* SceneDelegate.h */,
+				79B4526B27A2D79700561EAC /* SceneDelegate.m */,
+				79B4526D27A2D79700561EAC /* ViewController.h */,
+				79B4526E27A2D79700561EAC /* ViewController.m */,
+				79B4527027A2D79700561EAC /* Main.storyboard */,
+				79B4527327A2D79800561EAC /* Assets.xcassets */,
+				79B4527527A2D79800561EAC /* LaunchScreen.storyboard */,
+				79B4527827A2D79800561EAC /* Info.plist */,
+				79B4527927A2D79800561EAC /* main.m */,
 			);
-			path = a_Quiz;
+			path = First_ios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		79B4523927A1943700561EAC /* a_Quiz */ = {
+		79B4526327A2D79700561EAC /* First_ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 79B4525327A1943800561EAC /* Build configuration list for PBXNativeTarget "a_Quiz" */;
+			buildConfigurationList = 79B4527D27A2D79800561EAC /* Build configuration list for PBXNativeTarget "First_ios" */;
 			buildPhases = (
-				79B4523627A1943700561EAC /* Sources */,
-				79B4523727A1943700561EAC /* Frameworks */,
-				79B4523827A1943700561EAC /* Resources */,
+				79B4526027A2D79700561EAC /* Sources */,
+				79B4526127A2D79700561EAC /* Frameworks */,
+				79B4526227A2D79700561EAC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = a_Quiz;
-			productName = a_Quiz;
-			productReference = 79B4523A27A1943700561EAC /* a_Quiz.app */;
+			name = First_ios;
+			productName = First_ios;
+			productReference = 79B4526427A2D79700561EAC /* First_ios.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		79B4523227A1943700561EAC /* Project object */ = {
+		79B4525C27A2D79700561EAC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					79B4523927A1943700561EAC = {
+					79B4526327A2D79700561EAC = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 79B4523527A1943700561EAC /* Build configuration list for PBXProject "a_Quiz" */;
+			buildConfigurationList = 79B4525F27A2D79700561EAC /* Build configuration list for PBXProject "First_ios" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -129,59 +118,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 79B4523127A1943700561EAC;
-			productRefGroup = 79B4523B27A1943700561EAC /* Products */;
+			mainGroup = 79B4525B27A2D79700561EAC;
+			productRefGroup = 79B4526527A2D79700561EAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				79B4523927A1943700561EAC /* a_Quiz */,
+				79B4526327A2D79700561EAC /* First_ios */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		79B4523827A1943700561EAC /* Resources */ = {
+		79B4526227A2D79700561EAC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79B4525A27A1957C00561EAC /* BNRQuizViewController.xib in Resources */,
-				79B4524D27A1943800561EAC /* LaunchScreen.storyboard in Resources */,
-				79B4524A27A1943800561EAC /* Assets.xcassets in Resources */,
-				79B4524827A1943700561EAC /* Main.storyboard in Resources */,
-				79B4528127A2DC3800561EAC /* test.txt in Resources */,
+				79B4527727A2D79800561EAC /* LaunchScreen.storyboard in Resources */,
+				79B4527427A2D79800561EAC /* Assets.xcassets in Resources */,
+				79B4527227A2D79700561EAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		79B4523627A1943700561EAC /* Sources */ = {
+		79B4526027A2D79700561EAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79B4524527A1943700561EAC /* ViewController.m in Sources */,
-				79B4523F27A1943700561EAC /* AppDelegate.m in Sources */,
-				79B4525027A1943800561EAC /* main.m in Sources */,
-				79B4524227A1943700561EAC /* SceneDelegate.m in Sources */,
-				79B4525927A1957C00561EAC /* BNRQuizViewController.m in Sources */,
+				79B4526F27A2D79700561EAC /* ViewController.m in Sources */,
+				79B4526927A2D79700561EAC /* AppDelegate.m in Sources */,
+				79B4527A27A2D79800561EAC /* main.m in Sources */,
+				79B4526C27A2D79700561EAC /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		79B4524627A1943700561EAC /* Main.storyboard */ = {
+		79B4527027A2D79700561EAC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				79B4524727A1943700561EAC /* Base */,
+				79B4527127A2D79700561EAC /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		79B4524B27A1943800561EAC /* LaunchScreen.storyboard */ = {
+		79B4527527A2D79800561EAC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				79B4524C27A1943800561EAC /* Base */,
+				79B4527627A2D79800561EAC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -189,7 +175,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		79B4525127A1943800561EAC /* Debug */ = {
+		79B4527B27A2D79800561EAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -248,7 +234,7 @@
 			};
 			name = Debug;
 		};
-		79B4525227A1943800561EAC /* Release */ = {
+		79B4527C27A2D79800561EAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -301,7 +287,7 @@
 			};
 			name = Release;
 		};
-		79B4525427A1943800561EAC /* Debug */ = {
+		79B4527E27A2D79800561EAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -309,7 +295,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = a_Quiz/Info.plist;
+				INFOPLIST_FILE = First_ios/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -320,14 +306,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yl.a-Quiz";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yl.First-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		79B4525527A1943800561EAC /* Release */ = {
+		79B4527F27A2D79800561EAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -335,7 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = a_Quiz/Info.plist;
+				INFOPLIST_FILE = First_ios/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -346,7 +332,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yl.a-Quiz";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yl.First-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -356,25 +342,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		79B4523527A1943700561EAC /* Build configuration list for PBXProject "a_Quiz" */ = {
+		79B4525F27A2D79700561EAC /* Build configuration list for PBXProject "First_ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				79B4525127A1943800561EAC /* Debug */,
-				79B4525227A1943800561EAC /* Release */,
+				79B4527B27A2D79800561EAC /* Debug */,
+				79B4527C27A2D79800561EAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		79B4525327A1943800561EAC /* Build configuration list for PBXNativeTarget "a_Quiz" */ = {
+		79B4527D27A2D79800561EAC /* Build configuration list for PBXNativeTarget "First_ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				79B4525427A1943800561EAC /* Debug */,
-				79B4525527A1943800561EAC /* Release */,
+				79B4527E27A2D79800561EAC /* Debug */,
+				79B4527F27A2D79800561EAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 79B4523227A1943700561EAC /* Project object */;
+	rootObject = 79B4525C27A2D79700561EAC /* Project object */;
 }
