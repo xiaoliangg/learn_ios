@@ -33,16 +33,14 @@
 - (void)sceneDidBecomeActive:(UIScene *)scene {
     // Called when the scene has moved from an inactive state to an active state.
     // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-    CGRect firstFrame = CGRectMake(20, 30, 100, 150);
+    
+//    CGRect firstFrame = CGRectMake(20, 30, 100, 150);
+    // 可以让firstView充满整个屏幕
+    CGRect firstFrame = self.window.bounds;
     BNRHypnosisView *firstView = [[BNRHypnosisView alloc] initWithFrame:firstFrame];
     firstView.backgroundColor = [UIColor redColor];
     [self.window addSubview:firstView];
     
-    CGRect secondFrame = CGRectMake(140, 30, 100, 150);
-    BNRHypnosisView *secondView = [[BNRHypnosisView alloc] initWithFrame:secondFrame];
-    secondView.backgroundColor = [UIColor blueColor];
-    [firstView addSubview:secondView];
-
 }
 
 
