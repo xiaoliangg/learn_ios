@@ -38,7 +38,8 @@
     // 可以让firstView充满整个屏幕
     CGRect firstFrame = self.window.bounds;
     BNRHypnosisView *firstView = [[BNRHypnosisView alloc] initWithFrame:firstFrame];
-    firstView.backgroundColor = [UIColor redColor];
+    
+//    firstView.backgroundColor = [UIColor redColor];
     [self.window addSubview:firstView];
     
 }
