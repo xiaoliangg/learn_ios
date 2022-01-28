@@ -14,6 +14,7 @@
 		79B452C827A4313200561EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B452C727A4313200561EAC /* Assets.xcassets */; };
 		79B452CB27A4313200561EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B452C927A4313200561EAC /* LaunchScreen.storyboard */; };
 		79B452CE27A4313200561EAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B452CD27A4313200561EAC /* main.m */; };
+		79B452D627A4319500561EAC /* BNRHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B452D527A4319500561EAC /* BNRHypnosisView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		79B452CA27A4313200561EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79B452CC27A4313200561EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79B452CD27A4313200561EAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		79B452D427A4319500561EAC /* BNRHypnosisView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRHypnosisView.h; sourceTree = "<group>"; };
+		79B452D527A4319500561EAC /* BNRHypnosisView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRHypnosisView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				79B452C927A4313200561EAC /* LaunchScreen.storyboard */,
 				79B452CC27A4313200561EAC /* Info.plist */,
 				79B452CD27A4313200561EAC /* main.m */,
+				79B452D427A4319500561EAC /* BNRHypnosisView.h */,
+				79B452D527A4319500561EAC /* BNRHypnosisView.m */,
 			);
 			path = B_Hpnosister;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				79B452C327A4313100561EAC /* ViewController.m in Sources */,
 				79B452BD27A4313100561EAC /* AppDelegate.m in Sources */,
 				79B452CE27A4313200561EAC /* main.m in Sources */,
+				79B452D627A4319500561EAC /* BNRHypnosisView.m in Sources */,
 				79B452C027A4313100561EAC /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
