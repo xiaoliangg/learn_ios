@@ -37,6 +37,12 @@
     BNRHypnosisView *firstView = [[BNRHypnosisView alloc] initWithFrame:firstFrame];
     firstView.backgroundColor = [UIColor redColor];
     [self.window addSubview:firstView];
+    
+    CGRect secondFrame = CGRectMake(140, 30, 100, 150);
+    BNRHypnosisView *secondView = [[BNRHypnosisView alloc] initWithFrame:secondFrame];
+    secondView.backgroundColor = [UIColor blueColor];
+    [self.window addSubview:secondView];
+
 }
 
 
