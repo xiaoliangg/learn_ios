@@ -50,6 +50,9 @@
     // 绘制路径
     [path stroke];
     
+    // 创建图像
+    UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
+    [logoImage drawInRect:CGRectMake(80, 100, bounds.size.width-160, bounds.size.height-200)];
     
 }
 
