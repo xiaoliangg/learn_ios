@@ -54,6 +54,22 @@
     UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
     [logoImage drawInRect:CGRectMake(80, 100, bounds.size.width-160, bounds.size.height-200)];
     
+    [[UIColor colorWithRed:1.0 green:0.0 blue:1.0 alpha:1.0] setStroke];
+    UIBezierPath *path2 = [UIBezierPath bezierPath];
+    [path2 moveToPoint:center];
+    [path2 moveToPoint:bounds.origin];
+    [path2 stroke];
+    // yltodo 阴影和渐变未完成 使用 core Graphics绘制
+//    CGContextRef currentContext = UIGraphicsGetCurrentContext();
+//    CGContextSetRGBStrokeColor(currentContext, 1, 0, 0, 1);
+//    CGMutablePathRef path2 = CGPathCreateMutable();
+//    CGPathMoveToPoint(path2, NULL, center.x, center.y);
+//    CGPathMoveToPoint(path2, NULL, bounds.origin.x, origin.y);
+//    CGContextAddPath(currentContext, path2);
+//
+//    CGContextStrokePath(currentContext);
+//    CGPathRelease(path2);
+    
 }
 
 
