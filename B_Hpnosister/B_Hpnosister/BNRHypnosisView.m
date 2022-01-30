@@ -29,13 +29,17 @@
     center.x = bounds.origin.x + bounds.size.width/2.0;
     center.y = bounds.origin.y + bounds.size.height/2.0;
     
-    // 根据视图宽和高中的较小值计算圆形的半径
-    float radius = (MIN(bounds.size.width,bounds.size.height)/2.0);
+    // 使最外层圆形成为视图的外接圆
+    float maxRadius = hypot(bounds.size.width, bounds.size.height)/2.0;
     
     UIBezierPath *path = [[UIBezierPath alloc] init];
     
     // 定义路径
-    [path addArcWithCenter:center radius:radius startAngle:0.0 endAngle:M_PI*2.0 clockwise:NO];
+    for (float currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20) {
+        // 移除横线:抬起笔移动到下一个圆的起始处
+        [path moveToPoint:CGPointMake(center.x+currentRadius, center.y)];
+        [path addArcWithCenter:center radius:currentRadius startAngle:0.0 endAngle:M_PI*2.0 clockwise:YES];
+    }
     
     // 设置线条颜色
     [[UIColor lightGrayColor] setStroke];
@@ -45,6 +49,8 @@
     
     // 绘制路径
     [path stroke];
+    
+    
 }
 
 
