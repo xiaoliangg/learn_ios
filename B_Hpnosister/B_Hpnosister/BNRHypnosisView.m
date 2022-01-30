@@ -7,6 +7,10 @@
 
 #import "BNRHypnosisView.h"
 
+@interface BNRHypnosisView ()
+@property (strong,nonatomic) UIColor *circleColor;
+@end
+
 @implementation BNRHypnosisView
 
 
@@ -16,6 +20,8 @@
     if(self){
         // 设置 BNRHypnosisView对象的背景颜色为透明
         self.backgroundColor = [UIColor clearColor];
+        self.circleColor = [UIColor lightGrayColor];
+//        [self setCircleColor:[UIColor lightGrayColor]];
     }
     return self;
 }
@@ -42,7 +48,7 @@
     }
     
     // 设置线条颜色
-    [[UIColor lightGrayColor] setStroke];
+    [self.circleColor setStroke];
     
     // 设置线条宽度为10
     path.lineWidth = 10.0;
@@ -54,11 +60,11 @@
     UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
     [logoImage drawInRect:CGRectMake(80, 100, bounds.size.width-160, bounds.size.height-200)];
     
-    [[UIColor colorWithRed:1.0 green:0.0 blue:1.0 alpha:1.0] setStroke];
-    UIBezierPath *path2 = [UIBezierPath bezierPath];
-    [path2 moveToPoint:center];
-    [path2 moveToPoint:bounds.origin];
-    [path2 stroke];
+//    [[UIColor colorWithRed:1.0 green:0.0 blue:1.0 alpha:1.0] setStroke];
+//    UIBezierPath *path2 = [UIBezierPath bezierPath];
+//    [path2 moveToPoint:center];
+//    [path2 moveToPoint:bounds.origin];
+//    [path2 stroke];
     // yltodo 阴影和渐变未完成 使用 core Graphics绘制
 //    CGContextRef currentContext = UIGraphicsGetCurrentContext();
 //    CGContextSetRGBStrokeColor(currentContext, 1, 0, 0, 1);
@@ -72,5 +78,31 @@
     
 }
 
+// BNRHypnosisView 被触摸时会收到该消息
+- (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"%@ was touched",self);
+    
+    // 获取三个0到1之间的数字
+    float red = (arc4random() % 100) / 100.0;
+    float green = (arc4random() % 100) / 100.0;
+    float blue = (arc4random() % 100) / 100.0;
+    
+    UIColor *randomColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    self.circleColor = randomColor;
+    [self setNeedsDisplay];
+//    [self setCircleColor:randomColor];
+}
+
+//- (void) setCircleColor:(UIColor *)circleColor
+//{
+//    self.circleColor = circleColor;
+//    [self setNeedsDisplay];
+//}
+//
+//- (UIColor *)circleColor
+//{
+//    return self.circleColor;
+//}
 
 @end
