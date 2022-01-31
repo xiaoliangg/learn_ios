@@ -72,18 +72,14 @@
     // to restore the scene back to its current state.
 }
 
-- (void)extracted:(UNUserNotificationCenter *)center {
-    [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
-                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        if (!error) {
-            NSLog(@"request authorization succeeded!");
-        }
-    }];
-}
-
 - (void) registerForPushNotification {
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-    [self extracted:center];
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                              if (!error) {
+                                  NSLog(@"request authorization succeeded!");
+                              }
+                          }]; 
 }
 
 @end
