@@ -19,6 +19,7 @@
     self.view = backgroundView;
 }
 
+// init 方法会调用此方法
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
