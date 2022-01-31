@@ -34,12 +34,17 @@
 - (void)sceneDidBecomeActive:(UIScene *)scene {
     // Called when the scene has moved from an inactive state to an active state.
     // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+    BNRHypnosisViewController *hvc = [[BNRHypnosisViewController alloc] init];
+    
     // 获取指向 NSBundle 对象的指针，该NSBundle对象代表应用的主程序包
     NSBundle *appBundle = [NSBundle mainBundle];
     
     // 告诉初始化方法在 appBundle 查找BNRReminderViewController.xib文件
     BNRReminderViewController *rvc = [[BNRReminderViewController alloc] initWithNibName:@"BNRReminderViewController" bundle:appBundle];
-    [self.window setRootViewController:rvc];
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[hvc,rvc];
+    
+    [self.window setRootViewController:tabBarController];
     [self.window setBackgroundColor:[UIColor whiteColor]];
 }
 
