@@ -34,13 +34,26 @@
     // Called when the scene has moved from an inactive state to an active state.
     // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     
-//    CGRect firstFrame = CGRectMake(20, 30, 100, 150);
-    // 可以让firstView充满整个屏幕
-    CGRect firstFrame = self.window.bounds;
-    BNRHypnosisView *firstView = [[BNRHypnosisView alloc] initWithFrame:firstFrame];
+    // 创建两个CGrect结构分别作为UIScrollView对象和BNRHypnosisView对象的frame
+    CGRect screenRect = self.window.bounds;
+    CGRect bigRect = screenRect;
+    bigRect.size.width *= 2.0;
+    bigRect.size.height *= 2.0;
     
-//    firstView.backgroundColor = [UIColor redColor];
-    [self.window addSubview:firstView];
+    // 创建一个UIScrollView对象，将其尺寸设置为窗口大小
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+    
+    // 创建一个有着超大尺寸的BNRHypnosisView对象并将其加入UIScrollView对象
+    
+    BNRHypnosisView *hypnosisView = [[BNRHypnosisView alloc] initWithFrame:bigRect];
+    
+    [scrollView addSubview:hypnosisView];
+    
+    // 告诉scrollView对象取景范围有多大
+    scrollView.contentSize = bigRect.size;
+    self.window.backgroundColor = [UIColor whiteColor];
+        
+    [self.window addSubview:scrollView];
     
 }
 
