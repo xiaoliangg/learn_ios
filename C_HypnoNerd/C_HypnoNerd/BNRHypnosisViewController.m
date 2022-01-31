@@ -34,6 +34,27 @@
         // 将UIImage对象赋给标签项的image属性
         self.tabBarItem.image = i;
         
+//        //UISegmentedControl
+//        //参考:https://www.jianshu.com/p/7d9e4d4368c8
+//        //先生成存放标题的数据
+//        NSArray *array = [NSArray arrayWithObjects:@"红",@"绿",@"蓝", nil];
+//        //初始化UISegmentedControl
+//        UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:array];
+//        //设置frame
+//        segment.frame = CGRectMake(80.0, 80.0, self.view.frame.size.width-5.0, 150.0);
+//        //根据内容定分段宽度
+//        segment.apportionsSegmentWidthsByContent = YES;
+//        // 设置指定索引选项的宽度(设置下标为2的分段宽度)
+//        [segment setWidth:70.0 forSegmentAtIndex:1];
+//        // 设置分段中标题的位置(0,0点为中心)
+//        [segment setContentOffset:CGSizeMake(10,10) forSegmentAtIndex:1];
+//        //控件渲染色(也就是外观字体颜色)
+//        segment.tintColor = [UIColor redColor];
+//        //添加事件
+//        [segment addTarget:self action:@selector(change:) forControlEvents:UIControlEventValueChanged];
+//        //添加到视图
+//        [self.view addSubview:segment];
+        
     }
     return self;
 }
