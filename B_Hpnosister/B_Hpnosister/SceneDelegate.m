@@ -38,21 +38,25 @@
     CGRect screenRect = self.window.bounds;
     CGRect bigRect = screenRect;
     bigRect.size.width *= 2.0;
-    bigRect.size.height *= 2.0;
     
     // 创建一个UIScrollView对象，将其尺寸设置为窗口大小
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
     
-    // 创建一个有着超大尺寸的BNRHypnosisView对象并将其加入UIScrollView对象
-    
-    BNRHypnosisView *hypnosisView = [[BNRHypnosisView alloc] initWithFrame:bigRect];
-    
+    // 创建一个大小与屏幕相同的BNRHypnosisView对象并将其加入UIScrollView对象
+    BNRHypnosisView *hypnosisView = [[BNRHypnosisView alloc] initWithFrame:screenRect];
     [scrollView addSubview:hypnosisView];
+    
+    // 创建第二个大小与屏幕相同的BNRHypnosisView对象并放置在第一个BNRHypnosisView
+    // 对象的右侧，使其刚好移出屏幕外
+    screenRect.origin.x += screenRect.size.width;
+    BNRHypnosisView *anotherView = [[BNRHypnosisView alloc] initWithFrame:screenRect];
+    [scrollView addSubview:anotherView];
     
     // 告诉scrollView对象取景范围有多大
     scrollView.contentSize = bigRect.size;
     self.window.backgroundColor = [UIColor whiteColor];
-        
+    // ！！yl 边对齐(效果:不会出现显示两个的连接部分的情况。要么只显示左边，要么只显示右边)
+    [scrollView setPagingEnabled:YES];
     [self.window addSubview:scrollView];
     
 }
