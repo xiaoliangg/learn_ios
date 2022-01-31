@@ -8,6 +8,7 @@
 #import "SceneDelegate.h"
 #import "BNRHypnosisViewController.h"
 #import "BNRReminderViewController.h"
+#import "BNRQuizViewController.h"
 #import <UserNotifications/UserNotifications.h>
 
 @interface SceneDelegate ()
@@ -45,8 +46,9 @@
     // init方法调用initWithNibName方法时虽然传参上nil，但是会默认查找同名的xib文件，所以也可以加载成功
     BNRReminderViewController *rvc = [[BNRReminderViewController alloc] init];
 
+    BNRQuizViewController *qvc = [[BNRQuizViewController alloc] init];
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[hvc,rvc];
+    tabBarController.viewControllers = @[hvc,rvc,qvc];
     
     [self.window setRootViewController:tabBarController];
     [self.window setBackgroundColor:[UIColor whiteColor]];
