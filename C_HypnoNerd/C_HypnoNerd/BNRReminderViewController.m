@@ -78,4 +78,15 @@
    NSLog(@"BNRReminderViewController loaded its view.");
 }
 
+/**
+ 设置用户只可以选择now+60s以后的时间，不可以选择以前的时间。
+ 由于每次进入视图都要设置，所以写在 viewWillAppear，而不是 viewDidLoad(只会在首次加载视图时调用)
+ */
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.datePicker.minimumDate = [NSDate dateWithTimeIntervalSinceNow:60];
+}
+
 @end
