@@ -8,6 +8,7 @@
 #import "SceneDelegate.h"
 #import "BNRHypnosisViewController.h"
 #import "BNRReminderViewController.h"
+#import <UserNotifications/UserNotifications.h>
 
 @interface SceneDelegate ()
 
@@ -49,6 +50,7 @@
     
     [self.window setRootViewController:tabBarController];
     [self.window setBackgroundColor:[UIColor whiteColor]];
+    [self registerForPushNotification];
 }
 
 
@@ -70,5 +72,18 @@
     // to restore the scene back to its current state.
 }
 
+- (void)extracted:(UNUserNotificationCenter *)center {
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (!error) {
+            NSLog(@"request authorization succeeded!");
+        }
+    }];
+}
+
+- (void) registerForPushNotification {
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    [self extracted:center];
+}
 
 @end
