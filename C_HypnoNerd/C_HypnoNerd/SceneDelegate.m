@@ -79,7 +79,7 @@
                               if (!error) {
                                   NSLog(@"request authorization succeeded!");
                               }
-                          }]; 
+                          }];
 }
 
 @end

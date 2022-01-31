@@ -50,6 +50,7 @@
     
 }
 
+// init会调用此方法
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -65,6 +66,16 @@
         
     }
     return self;
+}
+
+// 检查视图控制器的视图是否已经加载。测试延迟加载
+// 6.6加载和显示视图 为了实现视图延迟加载，initWithNibName 不应该访问view或view的任何子视图。避免加载不需要在屏幕上显示的视图
+- (void)viewDidLoad
+{
+   // 必须调用父类的 viewDidLoad
+   [super viewDidLoad];
+   
+   NSLog(@"BNRReminderViewController loaded its view.");
 }
 
 @end

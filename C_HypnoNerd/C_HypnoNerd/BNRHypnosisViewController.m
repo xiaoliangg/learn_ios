@@ -37,5 +37,13 @@
     }
     return self;
 }
+ // 检查视图控制器的视图是否已经加载
+- (void)viewDidLoad
+{
+    // 必须调用父类的 viewDidLoad
+    [super viewDidLoad];
+    
+    NSLog(@"BNRHypnosisViewController loaded its view.");
+}
 
 @end
