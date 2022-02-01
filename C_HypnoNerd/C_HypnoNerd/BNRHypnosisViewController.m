@@ -82,6 +82,47 @@
 - (BOOL)textFieldShouldReturn:(UITextField *) textField
 {
     NSLog(@"%@",textField.text);
+    [self drawHypnoticMessage:textField.text];
+    //清空文本
+    textField.text = @"";
+    //关闭键盘
+    [textField resignFirstResponder];
     return YES;
+}
+
+/**
+ 催眠屏幕中画出文字
+ */
+- (void)drawHypnoticMessage:(NSString *) message
+{
+    for(int i = 0;i<20;i++){
+        UILabel *messageLabel = [[UILabel alloc] init];
+        
+        //设置UILable对象的文字和颜色
+        messageLabel.backgroundColor = [UIColor clearColor];
+        messageLabel.textColor = [UIColor whiteColor];
+        messageLabel.text = message;
+        
+        //根据需要显示的文字调整UILabel对象的大小
+        [messageLabel sizeToFit];
+        
+        //获取随机x坐标
+        //使UILabel对象的宽度不超出BNRHypnosisViewController的view宽度
+        int width = (int)(self.view.bounds.size.width - messageLabel.bounds.size.width);
+        int x = arc4random() % width;
+        
+        //获取随机y坐标
+        //使UILabel对象的高度不超出BNRHypnosisViewController的view高度
+        int height = (int)(self.view.bounds.size.height - messageLabel.bounds.size.height);
+        int y = arc4random() % height;
+        
+        //设置UILable对象的frame
+        CGRect frame = messageLabel.frame;
+        frame.origin = CGPointMake(x, y);
+        messageLabel.frame = frame;
+        
+        //将UILabel对象添加到BNRHypnosisViewController的view中
+        [self.view addSubview:messageLabel];
+    }
 }
 @end
