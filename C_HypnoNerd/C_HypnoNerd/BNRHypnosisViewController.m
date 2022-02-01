@@ -76,6 +76,9 @@
     NSLog(@"BNRHypnosisViewController loaded its view.");
 }
 
+/**
+ UITextFieldDelegate 的方法 委托设计模式
+ */
 - (BOOL)textFieldShouldReturn:(UITextField *) textField
 {
     NSLog(@"%@",textField.text);
