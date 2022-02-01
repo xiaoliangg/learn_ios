@@ -19,8 +19,10 @@
     UITextField *textField = [[UITextField alloc]initWithFrame:textFieldRect];
     // 设置UITextField对象的边框样式，便于查看它在屏幕上的位置
     textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.placeholder = @"Hypnotize me";
+    textField.returnKeyType = UIReturnKeyDone;
     [backgroundView addSubview:textField];
-    
+
     // 将 BNRHypnosisView 对象赋给视图控制器的view属性
     self.view = backgroundView;
 }
