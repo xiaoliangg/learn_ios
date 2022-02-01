@@ -15,6 +15,12 @@
     // 创建一个BNRHypnosisView对象
     BNRHypnosisView *backgroundView = [[BNRHypnosisView alloc] init];
     
+    CGRect textFieldRect = CGRectMake(40, 70, 240, 30);
+    UITextField *textField = [[UITextField alloc]initWithFrame:textFieldRect];
+    // 设置UITextField对象的边框样式，便于查看它在屏幕上的位置
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    [backgroundView addSubview:textField];
+    
     // 将 BNRHypnosisView 对象赋给视图控制器的view属性
     self.view = backgroundView;
 }
