@@ -46,8 +46,8 @@
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // 创建UITableViewCell对象，风格使用默认的 UITableViewCellStyleDefault
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
+    // 创建或重用 UITableViewCell 对象
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     
     //获取allItems的第n个BNRItem对象，
     //然后将该BNRItem对象的描述信息赋给UITableViewCell对象的textLabel
@@ -59,6 +59,12 @@
     return cell;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+}
 
 
 @end
