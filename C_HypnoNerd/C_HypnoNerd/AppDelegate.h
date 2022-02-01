@@ -5,7 +5,7 @@
 //  Created by yl on 2022/1/31.
 //
 
-#import <UIKit/UIKit.h>
+#import <UIKitUIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

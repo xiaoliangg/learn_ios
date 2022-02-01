@@ -4,7 +4,6 @@
 //
 //  Created by yl on 2022/1/31.
 //
-
 #import "BNRHypnosisViewController.h"
 #import "BNRHypnosisView.h"
 
@@ -21,6 +20,7 @@
     textField.borderStyle = UITextBorderStyleRoundedRect;
     textField.placeholder = @"Hypnotize me";
     textField.returnKeyType = UIReturnKeyDone;
+    // delegate属性需要实现 UITextFieldDelegate 协议，否则会报warning
     textField.delegate = self;
     [backgroundView addSubview:textField];
 
@@ -79,6 +79,6 @@
 - (BOOL)textFieldShouldReturn:(UITextField *) textField
 {
     NSLog(@"%@",textField.text);
-    return YES;
+    
 }
 @end
