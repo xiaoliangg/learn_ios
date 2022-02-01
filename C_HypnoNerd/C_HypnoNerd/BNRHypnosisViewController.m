@@ -79,6 +79,6 @@
 - (BOOL)textFieldShouldReturn:(UITextField *) textField
 {
     NSLog(@"%@",textField.text);
-    
+    return YES;
 }
 @end
