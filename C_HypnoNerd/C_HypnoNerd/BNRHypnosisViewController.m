@@ -21,6 +21,7 @@
     textField.borderStyle = UITextBorderStyleRoundedRect;
     textField.placeholder = @"Hypnotize me";
     textField.returnKeyType = UIReturnKeyDone;
+    textField.delegate = self;
     [backgroundView addSubview:textField];
 
     // 将 BNRHypnosisView 对象赋给视图控制器的view属性
@@ -75,4 +76,9 @@
     NSLog(@"BNRHypnosisViewController loaded its view.");
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *) textField
+{
+    NSLog(@"%@",textField.text);
+    return YES;
+}
 @end
