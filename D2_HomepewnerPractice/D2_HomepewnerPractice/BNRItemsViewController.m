@@ -56,6 +56,7 @@
     BNRItem *item = items[indexPath.section][indexPath.row];
     
     cell.textLabel.text = [item description];
+    [cell setBackgroundColor:[UIColor clearColor]];
     return cell;
 }
 /**
@@ -85,7 +86,14 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    
+    UIImage *image = [UIImage imageNamed:@"back.png"];
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:image];
 }
 
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 130.0;
+}
 
 @end
