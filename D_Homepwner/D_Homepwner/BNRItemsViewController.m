@@ -117,4 +117,17 @@
     }
     return _headerView;
 }
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 如果UITableView对象请求确认的是删除操作
+    if(editingStyle == UITableViewCellEditingStyleDelete){
+        NSArray *items = [[BNRItemStore sharedStore] allItems];
+        BNRItem *item = items[indexPath.row];
+        [[BNRItemStore sharedStore] removeItem:item];
+        
+        //还要删除表格视图中的相应表格行(带动画效果)
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
 @end
