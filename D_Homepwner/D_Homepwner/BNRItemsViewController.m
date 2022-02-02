@@ -23,9 +23,9 @@
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if(self){
-        for(int i=0;i<5;i++){
-            [[BNRItemStore sharedStore] createItem];
-        }
+//        for(int i=0;i<5;i++){
+//            [[BNRItemStore sharedStore] createItem];
+//        }
     }
     return self;
 }
@@ -76,7 +76,19 @@
 
 - (IBAction)addNewItem:(id)sender
 {
-
+    // 创建NSIndexPath对象，代表的位置上：第一个表格段，最后一个表格行。会报错
+//    NSInteger lastRow = [self.tableView numberOfRowsInSection:0];
+    
+    // 创建新的BNRItem对象并将其加入BNRItemStore对象
+    BNRItem *newItem = [[BNRItemStore sharedStore] createItem];
+    
+    // 获取新创建的对象在allItems数组中的索引
+    NSInteger lastRow = [[[BNRItemStore sharedStore] allItems] indexOfObject:newItem];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    
+    // 将新行插入UITableView对象
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
 }
 
 - (IBAction)toggleEditngMode:(id)sender
