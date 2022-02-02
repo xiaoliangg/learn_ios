@@ -9,6 +9,10 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
+@interface BNRItemsViewController ()
+@property (nonatomic,strong) IBOutlet UIView *headerView;
+@end
+
 @implementation BNRItemsViewController
 
 // 实现两个初始化方法，确保无论使用哪一个，初始化对象都是 UITableViewStylePlain 风格
@@ -64,7 +68,29 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    
+    //设置表头视图
+    UIView *header = self.headerView;
+    [self.tableView setTableHeaderView:header];
 }
 
+- (IBAction)addNewItem:(id)sender
+{
 
+}
+
+- (IBAction)toggleEditngMode:(id)sender
+{
+    
+}
+
+- (UIView*)headerView
+{
+    // 如果还没有载入headerVIew
+    if(!_headerView){
+        // 载入HeaderView.xib
+        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
+    }
+    return _headerView;
+}
 @end
