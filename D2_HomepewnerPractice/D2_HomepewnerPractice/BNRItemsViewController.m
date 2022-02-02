@@ -75,6 +75,11 @@
     }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    return @"No more items";
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
