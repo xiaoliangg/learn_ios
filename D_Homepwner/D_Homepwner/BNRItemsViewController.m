@@ -81,7 +81,19 @@
 
 - (IBAction)toggleEditngMode:(id)sender
 {
-    
+    // 如果当前的视图控制对象已经处在编辑模式
+    if(self.isEditing){
+        // 修改按钮文字，提示用户当前的表格状态
+        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+        
+        // 关闭编辑模式
+        [self setEditing:NO animated:YES];
+    }else{
+        // 修改按钮文字，提示用户当前的表格状态
+        [sender setTitle:@"Done" forState:UIControlStateNormal];
+        // 开启编辑模式
+        [self setEditing:YES animated:YES];
+    }
 }
 
 - (UIView*)headerView
