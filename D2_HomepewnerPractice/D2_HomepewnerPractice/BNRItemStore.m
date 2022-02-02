@@ -9,7 +9,9 @@
 #import "BNRItem.h"
 
 @interface BNRItemStore()
-@property (nonatomic) NSMutableArray *privateItems;
+// 二维数组，用于是否大于50美元进行分组
+@property (nonatomic) NSMutableArray *twoGroupItems;
+
 @end
 
 @implementation BNRItemStore
@@ -37,20 +39,26 @@
 {
     self = [super init];
     if(self){
-        _privateItems = [[NSMutableArray alloc] init];
+        _twoGroupItems = [[NSMutableArray alloc] init];
+        _twoGroupItems[0] = [[NSMutableArray alloc] init];
+        _twoGroupItems[1] = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (NSArray *)allItems
 {
-    return self.privateItems;
+    return self.twoGroupItems;
 }
 
 - (BNRItem *)createItem
 {
     BNRItem *item = [BNRItem randomItem];
-    [self.privateItems addObject:item];
+    if(item.valueInDollars > 50){
+        [self.twoGroupItems[1] addObject:item];
+    }else{
+        [self.twoGroupItems[0] addObject:item];
+    }
     return item;
 }
 @end

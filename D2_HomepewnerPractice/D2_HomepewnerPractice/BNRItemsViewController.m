@@ -38,7 +38,7 @@
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[BNRItemStore sharedStore] allItems] count];
+    return [[[BNRItemStore sharedStore] allItems][section] count];
 }
 
 /**
@@ -53,10 +53,26 @@
     //然后将该BNRItem对象的描述信息赋给UITableViewCell对象的textLabel
     //这里的n是该UITableViewCell对象所对应的表格行索引
     NSArray *items = [[BNRItemStore sharedStore] allItems];
-    BNRItem *item = items[indexPath.row];
+    BNRItem *item = items[indexPath.section][indexPath.row];
     
     cell.textLabel.text = [item description];
     return cell;
+}
+/**
+ UITableViewDataSource optional 方法实现
+ */
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [[[BNRItemStore sharedStore] allItems] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if(section == 0){
+        return @"小于等于50美元";
+    }else{
+        return @"大于50美元";
+    }
 }
 
 - (void)viewDidLoad
