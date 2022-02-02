@@ -130,4 +130,15 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
+
+/**
+ 只要实现此方法，就会显示换位控件
+ */
+- (void)tableView:(UITableView *)tableView
+moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+      toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    [BNRItemStore.sharedStore moveItemAtIndex:sourceIndexPath.row
+                                      toIndex:destinationIndexPath.row];
+}
 @end
