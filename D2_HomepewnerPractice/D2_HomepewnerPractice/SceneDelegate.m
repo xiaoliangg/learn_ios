@@ -6,6 +6,7 @@
 //
 
 #import "SceneDelegate.h"
+#import "BNRItemsViewController.h"
 
 @interface SceneDelegate ()
 
@@ -32,6 +33,13 @@
 - (void)sceneDidBecomeActive:(UIScene *)scene {
     // Called when the scene has moved from an inactive state to an active state.
     // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+    // 创建BNRItemsViewController对象
+    BNRItemsViewController *itemsViewController = [[BNRItemsViewController alloc] init];
+    // 将BNRItemsViewController的表视图加入窗口层次结构
+    [self.window setRootViewController:itemsViewController];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
 }
 
 
