@@ -14,6 +14,10 @@
 		793301DE27AB6C7D001B9CC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793301DD27AB6C7D001B9CC9 /* Assets.xcassets */; };
 		793301E127AB6C7D001B9CC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793301DF27AB6C7D001B9CC9 /* LaunchScreen.storyboard */; };
 		793301E427AB6C7D001B9CC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 793301E327AB6C7D001B9CC9 /* main.m */; };
+		793301F127AB6D88001B9CC9 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 793301EA27AB6D88001B9CC9 /* BNRItemStore.m */; };
+		793301F227AB6D88001B9CC9 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 793301EC27AB6D88001B9CC9 /* BNRItem.m */; };
+		793301F327AB6D88001B9CC9 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 793301EF27AB6D88001B9CC9 /* HeaderView.xib */; };
+		793301F427AB6D88001B9CC9 /* BNRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 793301F027AB6D88001B9CC9 /* BNRItemsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,13 @@
 		793301E027AB6C7D001B9CC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		793301E227AB6C7D001B9CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		793301E327AB6C7D001B9CC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		793301EA27AB6D88001B9CC9 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
+		793301EB27AB6D88001B9CC9 /* BNRItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemsViewController.h; sourceTree = "<group>"; };
+		793301EC27AB6D88001B9CC9 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
+		793301ED27AB6D88001B9CC9 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
+		793301EE27AB6D88001B9CC9 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
+		793301EF27AB6D88001B9CC9 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		793301F027AB6D88001B9CC9 /* BNRItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +83,13 @@
 				793301DF27AB6C7D001B9CC9 /* LaunchScreen.storyboard */,
 				793301E227AB6C7D001B9CC9 /* Info.plist */,
 				793301E327AB6C7D001B9CC9 /* main.m */,
+				793301ED27AB6D88001B9CC9 /* BNRItem.h */,
+				793301EC27AB6D88001B9CC9 /* BNRItem.m */,
+				793301EE27AB6D88001B9CC9 /* BNRItemStore.h */,
+				793301EA27AB6D88001B9CC9 /* BNRItemStore.m */,
+				793301EB27AB6D88001B9CC9 /* BNRItemsViewController.h */,
+				793301F027AB6D88001B9CC9 /* BNRItemsViewController.m */,
+				793301EF27AB6D88001B9CC9 /* HeaderView.xib */,
 			);
 			path = D3_HomepwnerPractice;
 			sourceTree = "<group>";
@@ -136,6 +154,7 @@
 				793301E127AB6C7D001B9CC9 /* LaunchScreen.storyboard in Resources */,
 				793301DE27AB6C7D001B9CC9 /* Assets.xcassets in Resources */,
 				793301DC27AB6C7D001B9CC9 /* Main.storyboard in Resources */,
+				793301F327AB6D88001B9CC9 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +165,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793301F427AB6D88001B9CC9 /* BNRItemsViewController.m in Sources */,
+				793301F127AB6D88001B9CC9 /* BNRItemStore.m in Sources */,
+				793301F227AB6D88001B9CC9 /* BNRItem.m in Sources */,
 				793301D927AB6C7D001B9CC9 /* ViewController.m in Sources */,
 				793301D327AB6C7D001B9CC9 /* AppDelegate.m in Sources */,
 				793301E427AB6C7D001B9CC9 /* main.m in Sources */,
