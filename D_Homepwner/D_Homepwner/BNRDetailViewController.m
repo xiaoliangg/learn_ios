@@ -78,6 +78,9 @@
         imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
     imagePicker.delegate = self;
+    
+    // 以模态的形式显示 UIImagePickerController 对象
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 @end
