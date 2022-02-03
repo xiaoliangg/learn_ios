@@ -8,6 +8,8 @@
 #import "BNRItemsViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
+#import "BNRDetailViewController.h"
+
 
 @interface BNRItemsViewController ()
 @property (nonatomic,strong) IBOutlet UIView *headerView;
@@ -140,5 +142,16 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 {
     [BNRItemStore.sharedStore moveItemAtIndex:sourceIndexPath.row
                                       toIndex:destinationIndexPath.row];
+}
+
+/**
+ 选中某个UITableviewCell对象时，会触发此消息。
+ */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] init];
+    
+    //将新创建的BNRDetailViewController对象压入UINavigationController对象的栈
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 @end
