@@ -74,10 +74,11 @@
     _item = item;
     self.navigationItem.title = _item.itemName;
 }
-
+/**
+ 点击“照相”按钮，触发选择照片
+ */
 - (IBAction)takePicture:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    
     // 如果设备支持相机，就使用拍照模式
     // 否则让用户从照片库选择照片
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
@@ -86,15 +87,23 @@
         imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
     imagePicker.delegate = self;
+    //是否允许编辑
+    imagePicker.allowsEditing = YES;
+    
     
     // 以模态的形式显示 UIImagePickerController 对象
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
+/**
+ 选择照片后调用
+ */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info
 {
     // 通过info字典获取选择的照片
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    
+    
     // 以itemKey为键，将照片存入BNRImageStore对象
     [[BNRImageStore sharedStore] setImage:image forKey:self.item.itemKey];
     // 将照片放入UIImageView对象
