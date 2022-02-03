@@ -83,4 +83,15 @@
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info
+{
+    // 通过info字典获取选择的照片
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    // 将照片放入UIImageView对象
+    self.imageView.image = image;
+    // 关闭 UIImagePickerController对象
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 @end
