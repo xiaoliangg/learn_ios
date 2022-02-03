@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRDetailViewController">
             <connections>
                 <outlet property="dateLabel" destination="50e-n6-te4" id="H9n-q1-b80"/>
+                <outlet property="imageView" destination="jeU-JF-HYL" id="Yk8-Si-3Fm"/>
                 <outlet property="nameField" destination="Y6N-24-Xyd" id="BaA-me-Ygf"/>
                 <outlet property="serialNumberField" destination="ZVK-K3-b1O" id="ZIe-Yy-SPr"/>
                 <outlet property="valueField" destination="wfn-W1-gqf" id="qk5-fz-99S"/>
@@ -77,6 +78,10 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jeU-JF-HYL">
+                    <rect key="frame" x="32" y="364" width="362" height="341"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
