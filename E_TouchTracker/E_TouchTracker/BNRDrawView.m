@@ -46,6 +46,12 @@
     // 用黑色绘制已经完成的线条
     [[UIColor blackColor] set];
     for(BNRLine *line in self.finishedLines){
+        CGFloat f = [self angleOfLineStart:line.begin LineEnd:line.end];
+        CGFloat red = (int)f % 2 ? 1.0:0.0;
+        CGFloat green = (int)(f*10) % 2 ? 1.0:0.0;
+        CGFloat blue = (int)(f*100) % 2 ? 1.0:0.0;
+        UIColor *color = [[UIColor alloc] initWithRed:red green:green blue:blue alpha:1.0];
+        [color set];
         [self strokeLine:line];
     }
     
@@ -107,5 +113,14 @@
         [self.linesInProgress removeObjectForKey:key];
     }
     [self setNeedsDisplay];
+}
+
+#pragma -mark 其他
+//  结果介于[-PI, PI]
+- (CGFloat)angleOfLineStart:(CGPoint)lineStart LineEnd:(CGPoint)lineEnd
+{
+    CGFloat a = lineEnd.x - lineStart.x;
+    CGFloat b = lineEnd.y - lineStart.y;
+    return atan2(a, b);
 }
 @end
