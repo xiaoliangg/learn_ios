@@ -132,7 +132,7 @@
 }
 
 /**
- 只要实现此方法，就会显示换位控件
+ 只要实现此方法，就会显示换行控件
  */
 - (void)tableView:(UITableView *)tableView
 moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
@@ -140,5 +140,10 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 {
     [BNRItemStore.sharedStore moveItemAtIndex:sourceIndexPath.row
                                       toIndex:destinationIndexPath.row];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"Remove";
 }
 @end
