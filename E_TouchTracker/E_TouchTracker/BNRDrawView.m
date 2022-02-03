@@ -80,8 +80,7 @@
     for(UITouch *t in touches){
         NSValue *key = [NSValue valueWithNonretainedObject:t];
         BNRLine *line = self.linesInProgress[key];
-        line.end = [t l
-                    ocationInView:self];
+        line.end = [t locationInView:self];
     }
     [self setNeedsDisplay];
 }
@@ -99,4 +98,14 @@
     [self setNeedsDisplay];
 }
 
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    // 向控制台输出日志，查看触摸事件发生顺序
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    for(UITouch *t in touches){
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        [self.linesInProgress removeObjectForKey:key];
+    }
+    [self setNeedsDisplay];
+}
 @end
