@@ -10,11 +10,6 @@
 #import "BNRItem.h"
 #import "BNRDetailViewController.h"
 
-
-@interface BNRItemsViewController ()
-@property (nonatomic,strong) IBOutlet UIView *headerView;
-@end
-
 @implementation BNRItemsViewController
 
 // 实现两个初始化方法，确保无论使用哪一个，初始化对象都是 UITableViewStylePlain 风格
@@ -86,10 +81,6 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    
-    //设置表头视图
-    UIView *header = self.headerView;
-    [self.tableView setTableHeaderView:header];
 }
 
 - (IBAction)addNewItem:(id)sender
@@ -126,16 +117,6 @@
     }
 }
 
-- (UIView*)headerView
-{
-    // 如果还没有载入headerVIew
-    if(!_headerView){
-        // 载入HeaderView.xib
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
-    }
-    return _headerView;
-}
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 如果UITableView对象请求确认的是删除操作
@@ -147,17 +128,6 @@
         //还要删除表格视图中的相应表格行(带动画效果)
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
-}
-
-/**
- 只要实现此方法，就会显示换位控件
- */
-- (void)tableView:(UITableView *)tableView
-moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
-      toIndexPath:(NSIndexPath *)destinationIndexPath
-{
-    [BNRItemStore.sharedStore moveItemAtIndex:sourceIndexPath.row
-                                      toIndex:destinationIndexPath.row];
 }
 
 /**

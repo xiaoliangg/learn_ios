@@ -17,7 +17,6 @@
 		7933012027A98C16001B9CC9 /* BNRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933011F27A98C16001B9CC9 /* BNRItemsViewController.m */; };
 		7933012327A98F12001B9CC9 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933012127A98F12001B9CC9 /* BNRItem.m */; };
 		7933012627A990E7001B9CC9 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7933012527A990E7001B9CC9 /* BNRItemStore.m */; };
-		793301C427AA92B2001B9CC9 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 793301C327AA92B2001B9CC9 /* HeaderView.xib */; };
 		793301F827AB77FF001B9CC9 /* BNRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 793301F627AB77FF001B9CC9 /* BNRDetailViewController.m */; };
 		793301F927AB77FF001B9CC9 /* BNRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 793301F727AB77FF001B9CC9 /* BNRDetailViewController.xib */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		7933012227A98F12001B9CC9 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
 		7933012427A990E7001B9CC9 /* BNRItemStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		7933012527A990E7001B9CC9 /* BNRItemStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
-		793301C327AA92B2001B9CC9 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		793301F527AB77FF001B9CC9 /* BNRDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRDetailViewController.h; sourceTree = "<group>"; };
 		793301F627AB77FF001B9CC9 /* BNRDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRDetailViewController.m; sourceTree = "<group>"; };
 		793301F727AB77FF001B9CC9 /* BNRDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BNRDetailViewController.xib; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 				7933012127A98F12001B9CC9 /* BNRItem.m */,
 				7933012427A990E7001B9CC9 /* BNRItemStore.h */,
 				7933012527A990E7001B9CC9 /* BNRItemStore.m */,
-				793301C327AA92B2001B9CC9 /* HeaderView.xib */,
 			);
 			path = D_Homepwner;
 			sourceTree = "<group>";
@@ -162,7 +159,6 @@
 				7933011527A98B06001B9CC9 /* LaunchScreen.storyboard in Resources */,
 				7933011227A98B06001B9CC9 /* Assets.xcassets in Resources */,
 				7933011027A98B06001B9CC9 /* Main.storyboard in Resources */,
-				793301C427AA92B2001B9CC9 /* HeaderView.xib in Resources */,
 				793301F927AB77FF001B9CC9 /* BNRDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
