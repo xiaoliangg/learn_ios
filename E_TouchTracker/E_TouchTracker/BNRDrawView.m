@@ -10,7 +10,7 @@
 
 @interface BNRDrawView ()
 
-@property (nonatomic,strong) BNRLine *currentLine;
+@property (nonatomic,strong) NSMutableDictionary *linesInProgress;
 @property (nonatomic,strong) NSMutableArray *finishedLines;
 
 @end
@@ -21,8 +21,10 @@
 {
     self = [super initWithFrame:frame];
     if(self){
+        self.linesInProgress = [[NSMutableDictionary alloc] init];
         self.finishedLines = [[NSMutableArray alloc] init];
         self.backgroundColor = [UIColor grayColor];
+        self.multipleTouchEnabled = YES;
     }
     return self;
 }
@@ -47,42 +49,53 @@
         [self strokeLine:line];
     }
     
-    if(self.currentLine){
-        // 用红色绘制正在画的线条
-        [[UIColor redColor] set];
-        [self strokeLine:self.currentLine];
+    // 用红色绘制正在画的线条
+    [[UIColor redColor] set];
+    for(NSValue *key in self.linesInProgress){
+        [self strokeLine:self.linesInProgress[key]];
     }
 }
 
 #pragma mark - 处理触摸事件
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    UITouch *t = [touches anyObject];
-    
-    // 根据触摸位置创建BNRLine对象
-    CGPoint location = [t locationInView:self];
-    
-    self.currentLine = [[BNRLine alloc] init];
-    self.currentLine.begin = location;
-    self.currentLine.end = location;
-    
+    // 向控制台输出日志，查看触摸事件发生顺序
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    for(UITouch *t in touches){
+        CGPoint location = [t locationInView:self];
+        
+        BNRLine *line = [[BNRLine alloc] init];
+        line.begin = location;
+        line.end = location;
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        self.linesInProgress[key] = line;
+    }
     [self setNeedsDisplay];
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    UITouch *t = [touches anyObject];
-    CGPoint location = [t locationInView:self];
-    
-    self.currentLine.end = location;
-    
+    // 向控制台输出日志，查看触摸事件发生顺序
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    for(UITouch *t in touches){
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        BNRLine *line = self.linesInProgress[key];
+        line.end = [t l
+                    ocationInView:self];
+    }
     [self setNeedsDisplay];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [self.finishedLines addObject:self.currentLine];
-    self.currentLine = nil;
+{    // 向控制台输出日志，查看触摸事件发生顺序
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    for(UITouch *t in touches){
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        BNRLine *line = self.linesInProgress[key];
+        
+        [self.finishedLines addObject:line];
+        [self.linesInProgress removeObjectForKey:key];
+    }
     [self setNeedsDisplay];
 }
 
