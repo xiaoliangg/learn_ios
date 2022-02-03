@@ -84,13 +84,24 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnH-VM-BgB">
-                    <rect key="frame" x="0.0" y="767" width="414" height="44"/>
+                    <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
                         <barButtonItem systemItem="camera" id="OB0-Te-XwY">
                             <connections>
                                 <action selector="takePicture:" destination="-1" id="rW0-BK-8Rd"/>
                             </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" id="4Kv-6P-utC">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="2Gv-o1-9nB">
+                                <rect key="frame" x="56.5" y="5" width="124.5" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Delete Image"/>
+                                <connections>
+                                    <action selector="deleteImage:" destination="-1" eventType="touchUpInside" id="zi4-i9-xS7"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </items>
                 </toolbar>
