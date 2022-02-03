@@ -7,6 +7,8 @@
 
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
+#import "BNRItemStore.h"
+#import "BNRImageStore.h"
 
 @interface BNRDetailViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -41,6 +43,12 @@
     
     //将转换后的日期字符串设置为dateLabel的标题
     self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
+    
+    // 根据itemKey，从 BNRImageStore 对象获取照片
+    NSString *itemKey = item.itemKey;
+    UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:itemKey];
+    // 将得到的照片赋给UIImageView对象
+    self.imageView.image = imageToDisplay;
     
 }
 
@@ -87,6 +95,8 @@
 {
     // 通过info字典获取选择的照片
     UIImage *image = info[UIImagePickerControllerOriginalImage];
+    // 以itemKey为键，将照片存入BNRImageStore对象
+    [[BNRImageStore sharedStore] setImage:image forKey:self.item.itemKey];
     // 将照片放入UIImageView对象
     self.imageView.image = image;
     // 关闭 UIImagePickerController对象

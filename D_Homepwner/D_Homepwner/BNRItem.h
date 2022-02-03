@@ -15,6 +15,8 @@
     int _valueInDollars;
     NSDate *_dateCreated;
 }
+// 保存照片的键
+@property (nonatomic,copy) NSString *itemKey;
 
 + (instancetype)randomItem;
 

@@ -6,6 +6,8 @@
 //
 
 #import "BNRImageStore.h"
+
+
 @interface BNRImageStore()
 @property (nonatomic,strong) NSMutableDictionary *dictionnary;
 @end

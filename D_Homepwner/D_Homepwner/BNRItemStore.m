@@ -7,6 +7,7 @@
 
 #import "BNRItemStore.h"
 #import "BNRItem.h"
+#import "BNRImageStore.h"
 
 @interface BNRItemStore()
 @property (nonatomic) NSMutableArray *privateItems;
@@ -56,6 +57,9 @@
 
 - (void)removeItem:(BNRItem *)item
 {
+    NSString *key = item.itemKey;
+    [[BNRImageStore sharedStore] deleteImageForKey:key];
+    
     [self.privateItems removeObjectIdenticalTo:item];
 }
 
