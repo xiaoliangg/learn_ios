@@ -10,7 +10,7 @@
 #import "BNRItemStore.h"
 #import "BNRImageStore.h"
 
-@interface BNRDetailViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface BNRDetailViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
@@ -104,4 +104,10 @@
     
 }
 
+// 用户中textField按下“换行“时，取消其第一响应状态，从而关闭键盘
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 @end

@@ -9,7 +9,7 @@
 @class BNRItem;
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BNRDetailViewController : UIViewController
+@interface BNRDetailViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate>
 @property (nonatomic,strong) BNRItem *item;
 @end
 
