@@ -28,6 +28,8 @@
 //        for(int i=0;i<5;i++){
 //            [[BNRItemStore sharedStore] createItem];
 //        }
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"MyHomepwner";
     }
     return self;
 }

@@ -55,4 +55,13 @@
     item.serialNumber = self.serialNumberField.text;
     item.valueInDollars = [self.valueField.text intValue];
 }
+
+/**
+ 在视图设置item属性时，同时设置导航栏标题
+ */
+- (void)setItem:(BNRItem *)item
+{
+    _item = item;
+    self.navigationItem.title = _item.itemName;
+}
 @end
