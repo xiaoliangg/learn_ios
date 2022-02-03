@@ -158,4 +158,10 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
     //将新创建的BNRDetailViewController对象压入UINavigationController对象的栈
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 @end
