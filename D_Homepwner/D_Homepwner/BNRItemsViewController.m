@@ -151,6 +151,10 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 {
     BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] init];
     
+    NSArray *items = [[BNRItemStore sharedStore] allItems];
+    BNRItem *selectedItem = items[indexPath.row];
+    detailViewController.item = selectedItem;
+    
     //将新创建的BNRDetailViewController对象压入UINavigationController对象的栈
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
