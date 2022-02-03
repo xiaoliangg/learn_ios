@@ -14,6 +14,7 @@
                 <outlet property="imageView" destination="jeU-JF-HYL" id="Yk8-Si-3Fm"/>
                 <outlet property="nameField" destination="Y6N-24-Xyd" id="BaA-me-Ygf"/>
                 <outlet property="serialNumberField" destination="ZVK-K3-b1O" id="ZIe-Yy-SPr"/>
+                <outlet property="toolBar" destination="gnH-VM-BgB" id="vqb-r8-XNv"/>
                 <outlet property="valueField" destination="wfn-W1-gqf" id="qk5-fz-99S"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -82,6 +83,17 @@
                     <rect key="frame" x="32" y="364" width="362" height="341"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnH-VM-BgB">
+                    <rect key="frame" x="0.0" y="767" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="camera" id="OB0-Te-XwY">
+                            <connections>
+                                <action selector="takePicture:" destination="-1" id="rW0-BK-8Rd"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
