@@ -30,6 +30,20 @@
 //        }
         UINavigationItem *navItem = self.navigationItem;
         navItem.title = @"MyHomepwner";
+        
+        // 创建新的UIBarButtonItem对象
+        // 将其目标对象设置为当前对象，将其动作方法设置为addNewItem
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc]
+                                initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                target:self
+                                action:@selector(addNewItem:)];
+        // 为UINavigation对象的rightBarButtonItem属性赋值
+        // 指向新创建的UIBarButtonItem对象
+        navItem.rightBarButtonItem = bbi;
+        
+        //只需一行代码就实现了编辑功能
+        navItem.leftBarButtonItem = self.editButtonItem;
+        
     }
     return self;
 }
