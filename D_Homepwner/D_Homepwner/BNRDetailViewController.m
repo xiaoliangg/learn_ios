@@ -75,6 +75,10 @@
     self.navigationItem.title = _item.itemName;
 }
 
+#pragma mark - 图片展示
+/**
+ 选择图片
+ */
 - (IBAction)takePicture:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
@@ -91,6 +95,9 @@
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
+/**
+ 选择图片后回调
+ */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info
 {
     // 通过info字典获取选择的照片
@@ -104,6 +111,7 @@
     
 }
 
+#pragma mark - 关闭键盘
 // 用户中textField按下“换行“时，取消其第一响应状态，从而关闭键盘
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
