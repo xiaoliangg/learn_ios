@@ -35,8 +35,12 @@
     // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     // 创建BNRItemsViewController对象
     BNRItemsViewController *itemsViewController = [[BNRItemsViewController alloc] init];
-    // 将BNRItemsViewController的表视图加入窗口层次结构
-    [self.window setRootViewController:itemsViewController];
+    // 创建UINavigationController对象
+    // 该对象的栈只包含itemsViewController
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:itemsViewController];
+    // 将UINavigationController对象设置为UIWindow对象的根视图控制器，
+    // 这样就可以将UINavigationController对象的视图添加到屏幕上
+    [self.window setRootViewController:navController];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
