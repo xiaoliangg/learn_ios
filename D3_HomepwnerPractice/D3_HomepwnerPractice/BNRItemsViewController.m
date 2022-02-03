@@ -146,4 +146,10 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 {
     return @"Remove";
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    return @"No more items!";
+}
+
 @end
