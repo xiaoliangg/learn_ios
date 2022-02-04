@@ -42,7 +42,9 @@
         [tapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
         [self addGestureRecognizer:tapRecognizer];
         
-        //
+        // 添加长按手势
+        UILongPressGestureRecognizer *pressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+        [self addGestureRecognizer:pressRecognizer];
     }
     return self;
 }
@@ -209,6 +211,21 @@
     // 从已经完成的线条中删除选中的线条
     [self.finishedLines removeObject:self.selectedLine];
     
+    [self setNeedsDisplay];
+}
+
+- (void)longPress:(UIGestureRecognizer *)gr
+{
+    if(gr.state == UIGestureRecognizerStateBegan){
+        CGPoint point = [gr locationInView:self];
+        self.selectedLine = [self lineAtPoint:point];
+        
+        if(self.selectedLine){
+            [self.linesInProgress removeAllObjects];
+        }
+    }else if(gr.state == UIGestureRecognizerStateEnded){
+        self.selectedLine = nil;
+    }
     [self setNeedsDisplay];
 }
 @end
