@@ -151,6 +151,24 @@
     CGPoint point = [gr locationInView:self];
     self.selectedLine = [self lineAtPoint:point];
     
+    if(self.selectedLine){
+        // 使视图成为UIMenuItem动作消息的目标
+        // 对应的UIView对象必须是当前UIWindow的第一响应对象
+        [self becomeFirstResponder];
+        // 获取UIMenuController对象
+        UIMenuController *menu = [UIMenuController sharedMenuController];
+        // 创建一个新的标题为“Delete”的UIMenuItem对象
+        UIMenuItem *deleteItem = [[UIMenuItem alloc] initWithTitle:@"Delete" action:@selector(deleteLine:)];
+        menu.menuItems = @[deleteItem];
+        // 先为UIMenuController对象设置显示区域，然后将其设置为可见
+        [menu showMenuFromView:self rect:CGRectMake(point.x, point.y, 2, 2)];
+//        [menu setTargetRect:CGRectMake(point.x, point.y, 2, 2) inView:self];
+//        [menu setMenuVisible:YES animated:YES];
+    }else{
+        // 如果没有选中的线条，就隐藏UIMenuController对象
+//        [[UIMenuController sharedMenuController] setMenuVisible:NO animated:YES];
+        [[UIMenuController sharedMenuController] hideMenuFromView:self];
+    }
     [self setNeedsDisplay];
 }
 
@@ -176,6 +194,22 @@
     }
     // 如果没能找到符合条件的线条，就返回nil，代表不选择任何线条
     return nil;
+}
+
+/**
+ 覆盖方法并返回YES
+ */
+- (BOOL) canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)deleteLine:(id)sender
+{
+    // 从已经完成的线条中删除选中的线条
+    [self.finishedLines removeObject:self.selectedLine];
+    
+    [self setNeedsDisplay];
 }
 @end
 
