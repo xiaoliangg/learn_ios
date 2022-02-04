@@ -8,8 +8,9 @@
 #import "BNRDrawView.h"
 #import "BNRLine.h"
 
-@interface BNRDrawView ()
+@interface BNRDrawView () <UIGestureRecognizerDelegate>
 
+@property (nonatomic,strong) UIPanGestureRecognizer *moveRecognizer;
 @property (nonatomic,strong) NSMutableDictionary *linesInProgress;
 @property (nonatomic,strong) NSMutableArray *finishedLines;
 // 单击选择的线条；弱引用
@@ -45,6 +46,12 @@
         // 添加长按手势
         UILongPressGestureRecognizer *pressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
         [self addGestureRecognizer:pressRecognizer];
+        
+        // 添加拖动手势
+        self.moveRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveLine:)];
+        self.moveRecognizer.delegate = self;
+        self.moveRecognizer.cancelsTouchesInView = NO;
+        [self addGestureRecognizer:self.moveRecognizer];
     }
     return self;
 }
@@ -227,6 +234,45 @@
         self.selectedLine = nil;
     }
     [self setNeedsDisplay];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    if(gestureRecognizer == self.moveRecognizer){
+        return YES;
+    }
+    return NO;
+}
+
+- (void)moveLine:(UIPanGestureRecognizer *) gr
+{
+    // 如果没有选中的线条就直接返回
+    if(!self.selectedLine){
+        return;
+    }
+    
+    // 如果UIPanGestureRecognizer 对象处于“变化后”的状态
+    if(gr.state == UIGestureRecognizerStateChanged){
+        // 获取手指的拖移距离
+        CGPoint translation = [gr translationInView:self];
+        
+        // 将拖移距离加至选中的线条的起点和终点
+        CGPoint begin = self.selectedLine.begin;
+        CGPoint end = self.selectedLine.end;
+        begin.x += translation.x;
+        begin.y += translation.y;
+        end.x += translation.x;
+        end.y += translation.y;
+        
+        // 为选中的线条设置新的起点和终点
+        self.selectedLine.begin = begin;
+        self.selectedLine.end = end;
+        
+        [self setNeedsDisplay];
+        
+        // 增量报告拖移距离 见P259
+        [gr setTranslation:CGPointZero inView:self];
+    }
 }
 @end
 
