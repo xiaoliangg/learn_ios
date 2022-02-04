@@ -60,7 +60,7 @@
 - (void)strokeLine:(BNRLine *) line
 {
     UIBezierPath *bp = [UIBezierPath bezierPath];
-    bp.lineWidth = 10;
+    bp.lineWidth = line.width;
     bp.lineCapStyle = kCGLineCapRound;
     
     [bp moveToPoint:line.begin];
@@ -114,6 +114,9 @@
         NSValue *key = [NSValue valueWithNonretainedObject:t];
         BNRLine *line = self.linesInProgress[key];
         line.end = [t locationInView:self];
+        
+        CGFloat speed = [self getSpeedX:(line.end.x-line.begin.x) getSpeedY:(line.end.y-line.begin.y)];
+        line.width = speed*speed;
     }
     [self setNeedsDisplay];
 }
@@ -255,7 +258,6 @@
     if(gr.state == UIGestureRecognizerStateChanged){
         // 获取手指的拖移距离
         CGPoint translation = [gr translationInView:self];
-        
         // 将拖移距离加至选中的线条的起点和终点
         CGPoint begin = self.selectedLine.begin;
         CGPoint end = self.selectedLine.end;
@@ -273,6 +275,23 @@
         // 增量报告拖移距离 见P259
         [gr setTranslation:CGPointZero inView:self];
     }
+}
+
+- (CGFloat)getSpeedX:(CGFloat)x getSpeedY:(CGFloat)y
+{
+    NSDate *currentDate = [[NSDate alloc] init];
+    CGFloat currentTime = [currentDate timeIntervalSince1970] * 1000;
+          
+    static CGFloat oldTime;
+    CGFloat speed;
+    if(oldTime){
+        CGFloat time = currentTime - oldTime;
+        CGFloat length = sqrt(x*x + y*y);
+        speed = length/time;
+    }
+    oldTime = currentTime;
+    NSLog(@"speed:%f",speed);
+    return speed;
 }
 @end
 
