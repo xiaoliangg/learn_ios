@@ -121,6 +121,24 @@
 
 - (IBAction)backgroundTapped:(id)sender {
     [self.view endEditing:YES];
+    
+    // 向有歧义布局的子视图发送 exerciseAmbiguityInLayout 消息
+    // 调试布局用方法
+//    for(UIView *subview in self.view.subviews){
+//        if([subview hasAmbiguousLayout]){
+//            [subview exerciseAmbiguityInLayout];
+//        }
+//    }
+}
+
+#pragma mark - 15.4 调试约束问题
+// 调试布局用方法
+- (void)viewDidLayoutSubviews
+{
+    for(UIView *subView in self.view.subviews){
+        if([subView hasAmbiguousLayout])
+            NSLog(@"AMBIGUOUS:%@",subView);
+    }
 }
 
 @end
