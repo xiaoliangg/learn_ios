@@ -7,6 +7,7 @@
 
 #import "SceneDelegate.h"
 #import "BNRItemsViewController.h"
+#import "BNRItemStore.h"
 
 @interface SceneDelegate ()
 
@@ -63,6 +64,12 @@
     // Called as the scene transitions from the foreground to the background.
     // Use this method to save data, release shared resources, and store enough scene-specific state information
     // to restore the scene back to its current state.
+    BOOL success = [[BNRItemStore sharedStore] saveChanges];
+    if(success){
+        NSLog(@"Saved all of the BNRItems");
+    }else{
+        NSLog(@"Could not save any of the BNRItems");
+    }
 }
 
 
