@@ -166,6 +166,10 @@
     
     [self.view addConstraints:horizontalConstraints];
     [self.view addConstraints:verticalConstraints];
+    
+    // 将imageView垂直方向的优先级设置为比其他视图低的数值
+    [self.imageView setContentHuggingPriority:200 forAxis:UILayoutConstraintAxisVertical];
+    [self.imageView setContentCompressionResistancePriority:700 forAxis:UILayoutConstraintAxisVertical];
 }
 
 
