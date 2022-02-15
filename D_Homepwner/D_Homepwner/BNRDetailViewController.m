@@ -141,4 +141,32 @@
     }
 }
 
+#pragma mark - 16 代码中使用自动布局
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    UIImageView *iv = [[UIImageView alloc] initWithImage:nil];
+    // 设置 UIImageView对象的缩放模式
+    iv.contentMode = UIViewContentModeScaleAspectFit;
+    // 告诉自动布局系统不要将自动缩放掩码转换为约束
+    iv.translatesAutoresizingMaskIntoConstraints = NO;
+    // 将UIImageView对象添加到view上
+    [self.view addSubview:iv];
+    // 将UIImageView对象赋给imageView属性
+    self.imageView = iv;
+    
+    // 16.2 创建约束
+    NSDictionary *nameMap = @{@"imageView":self.imageView,
+                              @"dateLabel":self.dateLabel,
+                              @"toolbar":self.toolBar};
+    // imageView的左边和右边与父视图的距离都是0点
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[imageView]-0-|" options:0 metrics:nil views:nameMap];
+    // imageView的顶边与dateLabel的距离是8点，底边与toolbar点距离也是8点
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[dateLabel]-[imageView]-[toolbar]" options:0 metrics:nil views:nameMap];
+}
+
+
+
+
+
 @end
