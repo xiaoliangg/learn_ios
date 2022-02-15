@@ -10,6 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BNRDetailViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,UIPopoverControllerDelegate>
+
+- (instancetype)initForNewItem:(BOOL)isNew;
+
 @property (nonatomic,strong) BNRItem *item;
 @end
 

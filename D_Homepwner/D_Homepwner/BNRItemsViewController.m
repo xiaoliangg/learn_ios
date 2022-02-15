@@ -93,11 +93,17 @@
     
     // 获取新创建的对象在allItems数组中的索引
     NSInteger lastRow = [[[BNRItemStore sharedStore] allItems] indexOfObject:newItem];
-    
+
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
-    
+
     // 将新行插入UITableView对象
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+    
+    // yltodo 严重 点击新增页面的Done后没有新增一项
+//    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] initForNewItem:YES];
+//    detailViewController.item = newItem;
+//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+//    [self presentViewController:detailViewController animated:YES completion:nil];
 }
 
 - (IBAction)toggleEditngMode:(id)sender
@@ -135,7 +141,7 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] init];
+    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] initForNewItem:NO];
     
     NSArray *items = [[BNRItemStore sharedStore] allItems];
     BNRItem *selectedItem = items[indexPath.row];
