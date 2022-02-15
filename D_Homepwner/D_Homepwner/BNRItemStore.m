@@ -72,4 +72,14 @@
     [self.privateItems removeObjectAtIndex:fromIndex];
     [self.privateItems insertObject:item atIndex:toIndex];
 }
+
+- (NSString *)itemArchivePath
+{
+    // 注意第一个参数是 NSDocumentDirectory 而不是 NSDocumentationDirectory
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    // 从 documentDirectories 数组获取第一个，也是唯一文档目录路径
+    NSString *documentDirectory = [documentDirectories firstObject];
+    return [documentDirectory stringByAppendingPathComponent:@"item.archive"];
+}
 @end
