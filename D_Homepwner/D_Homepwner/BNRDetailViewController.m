@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
 @end
 
@@ -49,6 +49,10 @@
     UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:itemKey];
     // 将得到的照片赋给UIImageView对象
     self.imageView.image = imageToDisplay;
+    
+    // 转屏相关
+    UIInterfaceOrientation io = [[UIApplication sharedApplication] statusBarOrientation];
+    [self prepareViewsForOrientation:io];
     
 }
 
@@ -174,6 +178,31 @@
 
 
 
+#pragma mark - 17 自动转屏
+
+/**
+ 如果设备为iphone，方向为横排，则隐藏相机按钮
+ */
+-(void)prepareViewsForOrientation:(UIInterfaceOrientation)orientation
+{
+    // 如果是 ipad，则不执行任何操作
+    if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad){
+        return;
+    }
+    // 判断设备是否处于横排方向
+    if(UIInterfaceOrientationIsLandscape(orientation)){
+        self.imageView.hidden = YES;
+        self.cameraButton.enabled = NO;
+    }else{
+        self.imageView.hidden = NO;
+        self.cameraButton.enabled = YES;
+    }
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self prepareViewsForOrientation:toInterfaceOrientation];
+}
 
 
 @end
