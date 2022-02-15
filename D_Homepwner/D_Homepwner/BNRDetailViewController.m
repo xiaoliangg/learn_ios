@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
+@property (strong,nonatomic) UIPopoverController *imagePickerPopover;
+
 @end
 
 @implementation BNRDetailViewController
@@ -95,8 +97,27 @@
     }
     imagePicker.delegate = self;
     
-    // 以模态的形式显示 UIImagePickerController 对象
-    [self presentViewController:imagePicker animated:YES completion:nil];
+    if([self.imagePickerPopover isPopoverVisible]){
+        // 17.3 解决连续点击相机按钮导致应用崩溃的问题
+        // 如果 imagePickerPopover 指向的是有效的 UIPopoverController 对象，
+        // 并且该对象的视图是可见的，就关闭这个对象，并将其设置为nil
+        [self.imagePickerPopover dismissPopoverAnimated:YES];
+        self.imagePickerPopover = nil;
+        return;
+    }
+    // 显示UIImagePickerController对象
+    // 创建 UIPopoverController 对象前先检查当前设备是否时ipad
+    if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad){
+        // 创建UIPopoverController对象，用于显示UIImagePickerController对象
+        self.imagePickerPopover = [[UIPopoverController alloc] initWithContentViewController:imagePicker];
+        self.imagePickerPopover.delegate = self;
+        // 显示UIPopoverController对象，
+        // sender指向的是代表相机按钮的UIBarButtonItem对象
+        [self.imagePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }else{
+        // 以模态的形式显示 UIImagePickerController 对象
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
 }
 
 /**
@@ -110,9 +131,16 @@
     [[BNRImageStore sharedStore] setImage:image forKey:self.item.itemKey];
     // 将照片放入UIImageView对象
     self.imageView.image = image;
-    // 关闭 UIImagePickerController对象
-    [self dismissViewControllerAnimated:YES completion:nil];
     
+    // 判断UIPopoverController对象是否存在
+    if(self.imagePickerPopover){
+        // 关闭UIPopoverController对象
+        [self.imagePickerPopover dismissPopoverAnimated:YES];
+        self.imagePickerPopover = nil;
+    }else{
+        // 关闭 UIImagePickerController对象
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 #pragma mark - 关闭键盘
@@ -204,5 +232,11 @@
     [self prepareViewsForOrientation:toInterfaceOrientation];
 }
 
+// 17.3
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    NSLog(@"User dismissed popover");
+    self.imagePickerPopover = nil;
+}
 
 @end
