@@ -92,6 +92,7 @@
 - (BOOL)saveChanges
 {
     NSString *path = [self itemArchivePath];
+    NSLog(@"archive file path:%@",path);
     // 如果固化成功就返回YES
     return [NSKeyedArchiver archiveRootObject:self.privateItems toFile:path];
 }

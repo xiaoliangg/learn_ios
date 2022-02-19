@@ -13,7 +13,10 @@
 
 @implementation AppDelegate
 
-
+/**
+ 从未运行状态进入激活状态
+ 可能的动作:启动应用
+ */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     return YES;
