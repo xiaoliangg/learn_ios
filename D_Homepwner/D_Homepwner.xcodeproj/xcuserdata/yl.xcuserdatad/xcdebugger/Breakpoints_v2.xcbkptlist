@@ -72,7 +72,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "732FE3BD-61B0-4FDB-8C00-B21FD5C299CF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "D_Homepwner/BNRItemStore.m"
@@ -81,6 +81,22 @@
             startingLineNumber = "97"
             endingLineNumber = "97"
             landmarkName = "-saveChanges"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3E785B6-670F-47E2-A996-9C8C44E0B7CE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "D_Homepwner/BNRImageStore.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-imageForKey:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
