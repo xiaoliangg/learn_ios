@@ -151,6 +151,8 @@
 {
     // 通过info字典获取选择的照片
     UIImage *image = info[UIImagePickerControllerOriginalImage];
+    //设置缩略图
+    [self.item setThumbnailFromImage:image];
     // 以itemKey为键，将照片存入BNRImageStore对象
     [[BNRImageStore sharedStore] setImage:image forKey:self.item.itemKey];
     // 将照片放入UIImageView对象
