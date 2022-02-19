@@ -59,6 +59,7 @@
     NSString *imagePath = [self imagePathForKey:key];
     //从图片提取JPEG格式的数据
     NSData *data = UIImageJPEGRepresentation(image, 0.5);
+//    NSData *data = UIImagePNGRepresentation(image);
     //将JPEG格式的数据写入文件
     [data writeToFile:imagePath atomically:YES];
     
