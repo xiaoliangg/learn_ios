@@ -42,6 +42,10 @@
 
     if(self){
         _dictionnary = [[NSMutableDictionary alloc] init];
+        //将自身注册为通知中心的观察者,观察内存过低警告
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self selector:@selector(clearCache:) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
+        
     }
     return self;
 }
@@ -96,5 +100,11 @@
     NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docomentDirectory = [documentDirectories firstObject];
     return [docomentDirectory stringByAppendingPathComponent:key];
+}
+
+-(void)clearCache:(NSNotification *)note
+{
+    NSLog(@"flushing %lu images out of the cache",[self.dictionnary count]);
+    [self.dictionnary removeAllObjects];
 }
 @end
