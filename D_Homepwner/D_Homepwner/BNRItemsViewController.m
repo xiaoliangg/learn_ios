@@ -82,8 +82,10 @@
     cell.serialNumberLabel.text = item.serialNumber;
     cell.valueLabel.text = [NSString stringWithFormat:@"$%d",item.valueInDollars];
     cell.imageView.image = item.thumbnail;
-    cell.actionBlock = ^{
+    BNRItemCell __weak *weakCell = cell;
+    weakCell.actionBlock = ^{
         NSLog(@"Going to show Image for:%@",item);
+        BNRItemCell *strongCell = weakCell;
         if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
             NSString *itemKey = item.itemKey;
             //如果BNRItem对象没有图片，就直接返回
@@ -94,7 +96,7 @@
             
             //根据UITableView对象的坐标系获取UIImageView对象的位置和大小
             //注意：这里也许会出现警告信息，下面很快就会讨论到
-            CGRect rect = [self.view convertRect:cell.thumbnailView.bounds fromView:cell.thumbnailView];
+            CGRect rect = [self.view convertRect:strongCell.thumbnailView.bounds fromView:strongCell.thumbnailView];
             //创建BNRImageViewController对象并为image属性赋值
             BNRImageViewController *ivc = [[BNRImageViewController alloc] init];
             ivc.image = img;
