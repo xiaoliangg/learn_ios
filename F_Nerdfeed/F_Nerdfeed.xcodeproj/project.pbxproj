@@ -14,6 +14,7 @@
 		79F54FB227C2093D00C3F492 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79F54FB127C2093D00C3F492 /* Assets.xcassets */; };
 		79F54FB527C2093D00C3F492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79F54FB327C2093D00C3F492 /* LaunchScreen.storyboard */; };
 		79F54FB827C2093D00C3F492 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F54FB727C2093D00C3F492 /* main.m */; };
+		79F54FC027C209C300C3F492 /* BNRCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F54FBF27C209C300C3F492 /* BNRCoursesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		79F54FB427C2093D00C3F492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79F54FB627C2093D00C3F492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79F54FB727C2093D00C3F492 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		79F54FBE27C209C200C3F492 /* BNRCoursesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRCoursesViewController.h; sourceTree = "<group>"; };
+		79F54FBF27C209C300C3F492 /* BNRCoursesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRCoursesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				79F54FB327C2093D00C3F492 /* LaunchScreen.storyboard */,
 				79F54FB627C2093D00C3F492 /* Info.plist */,
 				79F54FB727C2093D00C3F492 /* main.m */,
+				79F54FBE27C209C200C3F492 /* BNRCoursesViewController.h */,
+				79F54FBF27C209C300C3F492 /* BNRCoursesViewController.m */,
 			);
 			path = F_Nerdfeed;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				79F54FA727C2093C00C3F492 /* AppDelegate.m in Sources */,
 				79F54FB827C2093D00C3F492 /* main.m in Sources */,
 				79F54FAA27C2093C00C3F492 /* SceneDelegate.m in Sources */,
+				79F54FC027C209C300C3F492 /* BNRCoursesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
