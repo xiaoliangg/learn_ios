@@ -10,6 +10,8 @@
 #import "BNRItem.h"
 #import "BNRDetailViewController.h"
 #import "BNRItemCell.h"
+#import "BNRImageStore.h"
+#import "BNRImageViewController.h"
 
 @implementation BNRItemsViewController
 
@@ -82,6 +84,29 @@
     cell.imageView.image = item.thumbnail;
     cell.actionBlock = ^{
         NSLog(@"Going to show Image for:%@",item);
+        if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+            NSString *itemKey = item.itemKey;
+            //如果BNRItem对象没有图片，就直接返回
+            UIImage *img = [[BNRImageStore sharedStore] imageForKey:itemKey];
+            if(!img){
+                return;
+            }
+            
+            //根据UITableView对象的坐标系获取UIImageView对象的位置和大小
+            //注意：这里也许会出现警告信息，下面很快就会讨论到
+            CGRect rect = [self.view convertRect:cell.thumbnailView.bounds fromView:cell.thumbnailView];
+            //创建BNRImageViewController对象并为image属性赋值
+            BNRImageViewController *ivc = [[BNRImageViewController alloc] init];
+            ivc.image = img;
+            
+            //根据UIImageView对象的位置和大小
+            //显示一个大小为600x600点的UIPopoverController对象
+            self.imagePopover = [[UIPopoverController alloc] initWithContentViewController:ivc];
+            self.imagePopover.delegate = self;
+            self.imagePopover.popoverContentSize = CGSizeMake(600, 600);
+            [self.imagePopover presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            
+        }
     };
     return cell;
 }
@@ -171,5 +196,10 @@
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    self.imagePopover = nil;
 }
 @end
