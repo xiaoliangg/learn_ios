@@ -40,6 +40,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heE-Rh-eMk">
+                        <rect key="frame" x="0.0" y="2" width="40" height="40"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title=""/>
+                        <connections>
+                            <action selector="showImage:" destination="tWg-8s-7yk" eventType="touchUpInside" id="u51-jg-OfO"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bq0-Zx-aPE">
                         <rect key="frame" x="51" y="21" width="317" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -55,11 +63,15 @@
                     <constraint firstItem="yTc-EC-oJ4" firstAttribute="top" secondItem="n1f-vW-Xtj" secondAttribute="top" id="FVT-gb-OKD"/>
                     <constraint firstItem="qRu-a5-Uye" firstAttribute="centerY" secondItem="n1f-vW-Xtj" secondAttribute="centerY" id="Fsp-lf-SxX"/>
                     <constraint firstItem="Bq0-Zx-aPE" firstAttribute="leading" secondItem="qRu-a5-Uye" secondAttribute="trailing" constant="11" id="K7S-o5-reF"/>
+                    <constraint firstItem="heE-Rh-eMk" firstAttribute="bottom" secondItem="qRu-a5-Uye" secondAttribute="bottom" id="LjM-OF-YxZ"/>
                     <constraint firstItem="Bq0-Zx-aPE" firstAttribute="top" secondItem="yTc-EC-oJ4" secondAttribute="bottom" id="Q9J-Le-EeO"/>
                     <constraint firstItem="ETO-Np-7hl" firstAttribute="centerY" secondItem="n1f-vW-Xtj" secondAttribute="centerY" id="elo-c3-HQ0"/>
                     <constraint firstItem="ETO-Np-7hl" firstAttribute="leading" secondItem="yTc-EC-oJ4" secondAttribute="trailing" id="g67-Qv-lVw"/>
                     <constraint firstItem="Bq0-Zx-aPE" firstAttribute="leading" secondItem="yTc-EC-oJ4" secondAttribute="leading" id="hLf-cB-Rkn"/>
+                    <constraint firstItem="heE-Rh-eMk" firstAttribute="trailing" secondItem="qRu-a5-Uye" secondAttribute="trailing" id="lny-L6-tNf"/>
                     <constraint firstAttribute="trailing" secondItem="ETO-Np-7hl" secondAttribute="trailing" id="o25-r2-KFW"/>
+                    <constraint firstItem="heE-Rh-eMk" firstAttribute="leading" secondItem="qRu-a5-Uye" secondAttribute="leading" id="svO-BQ-gmO"/>
+                    <constraint firstItem="heE-Rh-eMk" firstAttribute="top" secondItem="qRu-a5-Uye" secondAttribute="top" id="zYg-Mo-dFN"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
