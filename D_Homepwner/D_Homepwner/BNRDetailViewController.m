@@ -18,6 +18,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *serialNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+
 
 @property (strong,nonatomic) UIPopoverController *imagePickerPopover;
 
@@ -76,6 +80,8 @@
     // 将得到的照片赋给UIImageView对象
     self.imageView.image = imageToDisplay;
     
+    // 20.1 动态字体
+    [self updateFonts];
     // 转屏相关
     UIInterfaceOrientation io = [[UIApplication sharedApplication] statusBarOrientation];
     [self prepareViewsForOrientation:io];
@@ -276,5 +282,18 @@
     [[BNRItemStore sharedStore] removeItem:self.item];
     
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+// 20.1更新字体
+- (void)updateFonts
+{
+    UIFont *font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    self.nameLabel.font = font;
+    self.serialNumberLabel.font = font;
+    self.valueLabel.font = font;
+    
+    self.nameField.font = font;
+    self.serialNumberField.font = font;
+    self.valueField.font = font;
 }
 @end
