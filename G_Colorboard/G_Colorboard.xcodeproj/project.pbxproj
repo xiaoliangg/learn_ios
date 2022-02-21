@@ -15,6 +15,7 @@
 		79F5501727C3C7CB00C3F492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79F5501527C3C7CB00C3F492 /* LaunchScreen.storyboard */; };
 		79F5501A27C3C7CB00C3F492 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F5501927C3C7CB00C3F492 /* main.m */; };
 		79F5502327C3C93E00C3F492 /* Colorboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79F5502227C3C93E00C3F492 /* Colorboard.storyboard */; };
+		79F5504027C3EB8100C3F492 /* BNRColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F5503F27C3EB8100C3F492 /* BNRColorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		79F5501827C3C7CB00C3F492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79F5501927C3C7CB00C3F492 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		79F5502227C3C93E00C3F492 /* Colorboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Colorboard.storyboard; sourceTree = "<group>"; };
+		79F5503E27C3EB8100C3F492 /* BNRColorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRColorViewController.h; sourceTree = "<group>"; };
+		79F5503F27C3EB8100C3F492 /* BNRColorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRColorViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 				79F5501827C3C7CB00C3F492 /* Info.plist */,
 				79F5501927C3C7CB00C3F492 /* main.m */,
 				79F5502227C3C93E00C3F492 /* Colorboard.storyboard */,
+				79F5503E27C3EB8100C3F492 /* BNRColorViewController.h */,
+				79F5503F27C3EB8100C3F492 /* BNRColorViewController.m */,
 			);
 			path = G_Colorboard;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			files = (
 				79F5500F27C3C7CA00C3F492 /* ViewController.m in Sources */,
 				79F5500927C3C7CA00C3F492 /* AppDelegate.m in Sources */,
+				79F5504027C3EB8100C3F492 /* BNRColorViewController.m in Sources */,
 				79F5501A27C3C7CB00C3F492 /* main.m in Sources */,
 				79F5500C27C3C7CA00C3F492 /* SceneDelegate.m in Sources */,
 			);
