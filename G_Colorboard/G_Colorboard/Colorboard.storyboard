@@ -35,7 +35,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="0Bd-Pw-9Ow" kind="show" id="Trs-uN-W3S"/>
+                                    <segue destination="0Bd-Pw-9Ow" kind="show" identifier="ExistingColor" id="Trs-uN-W3S"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" title="Colors" id="AQf-pe-1QA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j9O-c1-Riz">
                             <connections>
-                                <segue destination="pfg-FQ-Loo" kind="presentation" id="YFd-0R-flX"/>
+                                <segue destination="pfg-FQ-Loo" kind="presentation" identifier="NewColor" id="YFd-0R-flX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BNRColorDescription.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UISlider *greenSlider;
 @property (weak, nonatomic) IBOutlet UISlider *blueSlider;
 
-
+@property (nonatomic) BOOL existingColor;
+@property (nonatomic) BNRColorDescription *colorDescription;
 @end
 
 NS_ASSUME_NONNULL_END
